@@ -1,0 +1,10 @@
+from datetime import datetime
+
+give_date = datetime(year=2020, month=9, day=8)
+
+current_date = datetime.now()
+
+get_days_from_today = current_date.toordinal() - give_date.toordinal()
+print(get_days_from_today)
+
+
