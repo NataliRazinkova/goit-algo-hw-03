@@ -1,10 +1,17 @@
-from datetime import datetime
+from datetime import datetime as dt
 
-give_date = datetime(year=2020, month=9, day=8)
+def get_days_from_today(enter_date):
+    try:
+        user_date = dt.strptime(enter_date, "%Y-%m-%d")
+        current_date = dt.today()
+        delta_days = current_date - user_date
+        return delta_days.days
+    
+    except ValueError:
+        print("Введена дата не відповідає формату yyyy.mm.dd")
+num = get_days_from_today("1999-10-26")
 
-current_date = datetime.now()
+print(num)
 
-get_days_from_today = current_date.toordinal() - give_date.toordinal()
-print(get_days_from_today)
 
 
